@@ -1,19 +1,22 @@
-{% include "includes/header.html" %}
+{% extends "base.html" %}
 
+{% load static %}
 {% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="row">
-        
-        <h1>Linsite Login</h1>
-        <form method="POST">
-            {% csrf_token %}
+{% block content %}
+<div class="login_overlay">
+    <div class="container">
+        <div class="row">
+            <div class="login">
+            <img src="{% static 'linsite-logo.png' %}" class="logo"/>
+            <form method="POST">
+                {% csrf_token %}
 
-            {{ form|crispy }}
-            <input type="submit" name="submit" value="Inloggen" />
-        </form>
-
+                {{ form|crispy }}
+                <input type="submit" class="login-btn" name="submit" value="Inloggen" />
+            </form>
+            </div>
+        </div>
     </div>
 </div>
-
-{% include "includes/header.html" %}
+{% endblock content %}

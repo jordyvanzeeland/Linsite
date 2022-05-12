@@ -1,11 +1,18 @@
-{% include "includes/header.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+    {% include 'includes/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
 
     <div class="container">
         <div class="row">
-            <h1>Welkom bij Linsite</h1>
-            <a href="/logout">Uitloggen</a>
 
-            <table width="100%" class="table table-striped">
+            <input type="text" class="form-control searchbar" placeholder="Site zoeken..." />
+
+            <table id="DataTable" width="100%" class="table">
                 <thead>
                     <tr>
                         <th>Hostname</th>
@@ -31,5 +38,5 @@
             </table>
         </div>
     </div>
-    
-{% include "includes/footer.html" %}
+
+{% endblock content %}

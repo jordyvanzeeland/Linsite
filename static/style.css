@@ -1,0 +1,124 @@
+html, body{
+    background:#f5f5f5;
+}
+
+th{
+    text-align: left;
+}
+
+.logo{
+    width: 275px;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom:20px;
+}
+
+.login_overlay{    
+    background: url('/static/login_bg.jpg');
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+}
+
+.login label{
+    display: inline-block;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.login input{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.login .login-btn{
+    background: #72848d;
+    border: none;
+    color: #ffffff;
+    padding: 7px 20px;
+    margin-top: 10px;
+}
+
+.login h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login form{
+    background: rgba(255,255,255,0.1);
+    padding: 25px 25px 15px 25px;
+    width: 500px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+}
+
+.login form input{
+    margin-bottom: 15px;
+}
+
+.navbar{
+    background: url('/static/login_bg.jpg');
+    width: 100%;
+    color:#ffffff;
+}
+
+.navbar img{
+    margin-top: 0;
+    width: 60%;
+    margin-bottom: 0;
+}
+
+.navbar a{
+    color:#72848d !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchbar{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+/* DataTable */
+
+table.dataTable tbody th, table.dataTable tbody td {
+    border-bottom: solid 1px #eee;
+    padding: 15px 15px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+table.dataTable thead th{
+    font-size: 14px;
+    font-weight: 500;
+    border:none;
+}
+
+table.dataTable.no-footer{
+    border:none;
+}
+
+.dataTables_length, .dataTables_filter{
+    display: none;
+}
+
+.dataTables_wrapper{
+    padding:0;
+}
+
+.dataTables_info, .dataTables_paginate{
+    font-size:14px;
+    margin-top:20px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: #72848d !important;
+    border: none !important;
+    color: #ffffff !important;
+}

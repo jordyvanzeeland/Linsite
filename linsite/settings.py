@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATIC_ROOT = "var/www/linsite/static/"
+
 
 # Application definition
 
@@ -39,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'accounts'
+    'accounts',
+    'fontawesomefree'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
