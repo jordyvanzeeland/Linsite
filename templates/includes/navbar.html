@@ -8,8 +8,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+              <li class="nav-item newhost" style="position: relative;">
                 <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-plus"></i> Nieuwe host</a>
+                <div class="popup-new-host">
+                  <span>Nieuwe host toevoegen</span>
+                  <form class="hostform" method="POST" action="">
+                    {% csrf_token %}
+                    <input type="text" name="hostname" class="hostname" />
+                    <input type="submit" name="submit" value="Toevoegen" class="btn-blue" />
+                  </form>
+                </div>
               </li>
               
             </ul>

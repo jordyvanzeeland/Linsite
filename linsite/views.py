@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from .sites import Sites
 import os
 
 @login_required
 def index(request):
 
-    hosts = os.listdir("/etc/apache2/sites-available/")
+    hosts = os.listdir("/etc/apache2/sites-available")
     hostsArray = []
     ftpdir = ''
     configfile = ''
@@ -13,7 +14,7 @@ def index(request):
     for host in hosts:
         hostenabled = 0
         # Get active site
-        for root, subdirs, files in os.walk('/etc/apache2/sites-enabled/'):
+        for root, subdirs, files in os.walk('/etc/apache2/sites-enabled'):
             for file in files:
                 
                 if file == host:
@@ -32,12 +33,10 @@ def index(request):
                     ftpdir = os.path.join(root, dir)
 
         # Get config file
-        for root, subdirs, files in os.walk('/etc/apache2/sites-available/'):
+        for root, subdirs, files in os.walk('/etc/apache2/sites-available'):
             for file in files:
                 if file == host:
                     configfile = os.path.join(root, file)
-
-        
 
         hostsArray.append({
             'hostname': hostname,
@@ -45,6 +44,10 @@ def index(request):
             'ftpdir': ftpdir,
             'hostactive': hostenabled
         })
+
+    if request.method == 'POST':
+            host  = request.POST.get("hostname")
+            return Sites(host).addSite()
 
     context = {
         'hosts': hostsArray

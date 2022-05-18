@@ -34,6 +34,14 @@
             $('.searchbar').on('keyup', function(){
                 table.search(this.value).draw();
             });
+
+            $('.newhost').on('click', function(){
+                $('.popup-new-host').fadeIn();
+            });
+
+            // $('.hostform').on('submit', function(event){
+            //     event.preventDefault();
+            // })
         } );
     </script>
     </html>

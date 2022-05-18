@@ -122,3 +122,26 @@ table.dataTable.no-footer{
     border: none !important;
     color: #ffffff !important;
 }
+
+.btn-blue{
+    background: #72848d !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+.popup-new-host{
+    display:none;
+    background: #ffffff;
+    width: 300px;
+    color: #333;
+    padding: 15px;
+    position: absolute;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+}
+
+.popup-new-host input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
