@@ -12,6 +12,9 @@ def index(request):
     configfile = ''
 
     for host in hosts:
+        if host == "000-default.conf" or host == "default-ssl.conf":
+            continue
+        
         hostenabled = 0
         # Get active site
         for root, subdirs, files in os.walk('/etc/apache2/sites-enabled'):
@@ -29,7 +32,6 @@ def index(request):
             for dir in subdirs:
                 
                 if dir == hostname:
-                    print(dir, hostname)
                     ftpdir = os.path.join(root, dir)
 
         # Get config file
@@ -46,8 +48,12 @@ def index(request):
         })
 
     if request.method == 'POST':
-            host  = request.POST.get("hostname")
-            return Sites(host).addSite()
+        host  = request.POST.get("hostname")
+        return Sites(host).addSite()
+
+    if request.method == 'GET' and 'delete' in request.GET:
+        host = request.GET.get('delete')
+        return Sites(host).deleteSite()
 
     context = {
         'hosts': hostsArray

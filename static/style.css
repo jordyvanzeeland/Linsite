@@ -92,6 +92,7 @@ table.dataTable tbody th, table.dataTable tbody td {
     padding: 15px 15px;
     font-size: 14px;
     font-weight: 300;
+    vertical-align: baseline;
 }
 
 table.dataTable thead th{
@@ -127,6 +128,14 @@ table.dataTable.no-footer{
     background: #72848d !important;
     border: none !important;
     color: #ffffff !important;
+    font-size:14px;
+}
+
+.btn-delete{
+    background: #d9534f !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size:14px;
 }
 
 .popup-new-host{
@@ -144,4 +153,14 @@ table.dataTable.no-footer{
     width: 100%;
     margin-bottom: 10px;
     margin-top: 5px;
+}
+
+.not-active{
+    color:#d9534f;
+    font-size:20px;
+}
+
+.active{
+    color: #28a745;
+    font-size:20px;
 }

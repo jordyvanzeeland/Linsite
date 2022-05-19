@@ -19,19 +19,24 @@
                         <th>Configfile</th>
                         <th>FTP folder</th>
                         <th>Actief</th>
-                        <th>Aangemaakt op</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for host in hosts %}
+
+                        
                         <tr>
                             <td>{{ host.hostname }}</td>
                             <td>{{ host.hostconf }}</td>
                             <td>{{ host.ftpdir }}</td>
-                            <td>{{ host.hostactive }}</td>
-                            <td>00-00-0000 00:00:00</td>
-                            <td>Verwijderen</td>
+                            {% if host.hostactive == 1 %}
+                                <td><i class="active fa-solid fa-circle-check"></i></td>
+                            {% else %}
+                                <td><i class="not-active fa-solid fa-circle-xmark"></i></td>
+                            {% endif %}
+                            <td><a class="btn btn-delete" href="/?delete={{ host.hostname }}"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
